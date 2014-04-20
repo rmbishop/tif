@@ -4,26 +4,20 @@ tif - a tiny FPGA board
 This branch fixes issues with the default code that
 prevented that code from working.
 
-It has been tested with on Windows 7 64x with
-python 2.7.6 (32 bit).
+It has been tested with on <b>Windows 7 64x with
+python 2.7.6 (32 bit)</b>
 
 Examples.  Type the following in your cmd.exe shell:
 
-1) python tiffind.py
+  <code>python tiffind.py</code>
 
-2) python tifload.py ../firmware/4000/flashctl/syn/tif_flashctl.jed
+  <code>python tifload.py ../firmware/4000/flashctl/syn/tif_flashctl.jed</code>
 
 Use tifweb.py once you load tif_flashctl.jed
 
-3) python tifweb.py 
+  <code>python tifweb.py </code>
 
-
-
-Default branch text:
-
-
-This is the software for Bugblat's *tiny FPGA* board - the *tif* board.
-
+  
 What is a tif board?
 --------------------
 
