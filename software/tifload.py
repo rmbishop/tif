@@ -37,9 +37,9 @@ def findTif():
   try:
     devs = hid.enumerate()
     for dev in devs:
-      s  = "Manufacturer:%s" % dev['manufacturer_string']
+      s  = "Manufacturer:%s" % dev['manufacturer_string'].encode('ascii','ignore')
       print(s)
-      s  = "  Product:%s" % dev['product_string']
+      s  = "  Product:%s" % dev['product_string'].encode('ascii','ignore')
       print(s)
       vid = dev['vendor_id']
       pid = dev['product_id']

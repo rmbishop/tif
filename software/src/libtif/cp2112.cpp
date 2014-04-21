@@ -308,7 +308,7 @@ bool Tcp2112::dataWriteReadRequest(int AslaveAddr, int ArdLen,
       xbuf.byte(*pCmdBuf++);
 
     int len = xbuf.length();
-    int numSent = _sendReport(xbuf.data(), len);
+    int numSent = _sendReport(xbuf.data(), HID_WR_BUFF_SIZE);
     if (numSent < len)
       return false;
     ok = _dataReadForceSend(ArdLen);
@@ -325,7 +325,7 @@ bool Tcp2112::_dataReadForceSend(int Acount) {
     THidWrBuf xbuf;
     xbuf.byte(HID_DATA_READ_FORCE_SEND).wordBE(Acount);
     int len = xbuf.length();
-    int numSent = _sendReport(xbuf.data(), len);
+    int numSent = _sendReport(xbuf.data(), HID_WR_BUFF_SIZE);
     ok = (numSent >= len);
     }
   return ok;

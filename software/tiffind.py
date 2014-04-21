@@ -13,6 +13,7 @@
 #
 #!/usr/bin/env python
 
+import sys
 import ctypes
 from ctypes import *
 from pyhidapi import hid
@@ -22,9 +23,9 @@ def main():
   try:
     devs = hid.enumerate()
     for dev in devs:
-      s  = "Manufacturer:%s" % dev['manufacturer_string']
+      s  = "Manufacturer:%s" % dev['manufacturer_string'].encode('ascii','ignore')
       print(s)
-      s  = "  Product:%s" % dev['product_string']
+      s  = "  Product:%s" % dev['product_string'].encode('ascii','ignore')
       print(s)
       s  = "  VID:" + ("%04X" % dev['vendor_id'])
       s += "  PID:" + ("%04X" % dev['product_id'])
